@@ -8,6 +8,7 @@ const debugIndex = debug('app:Index');
 
 import { dogOwnerRouter } from './routes/api/dogOwner.js';
 
+
 const app = express();
 const port = 3000;
 
@@ -22,4 +23,4 @@ app.listen(port, () => {
   debugIndex(`Example app listening on port http://localhost:${port}`);
 });
 
-app.use('/api/dogOwners', dogOwnerRouter);
+app.use('/api/pet-owners', dogOwnerRouter);
