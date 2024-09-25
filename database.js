@@ -48,6 +48,11 @@ async function UpdatePetOwner(updatedOwner) {
   return dbResult;
 }
 
+async function DeletePetOwner(id) {
+  const db = await connectToDatabase();
+  const dbResult = await db.collection('PetOwners').deleteOne(id);
+}
+
 ping();
 
-export{GetAllPetOwners, GetPetOwnerById, AddPetOwner, UpdatePetOwner}
+export{GetAllPetOwners, GetPetOwnerById, AddPetOwner, UpdatePetOwner, DeletePetOwner}

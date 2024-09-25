@@ -62,8 +62,9 @@ router.patch('/:id',async (req,res)=>{
           currentOwner.dogs.push(dog);
       });
     } else {
-      currentOwner.dogs
+      currentOwner.dogs.push(updatedOwner.dogs)
     }
+  }
     if (updatedOwner.firstName){
       currentOwner.firstName = updatedOwner.firstName;
     }
@@ -77,7 +78,7 @@ router.patch('/:id',async (req,res)=>{
       res.status(500).send(error);
     }
   }
-}});
+});
 
 // Delete Pet Owner
 router.delete('/:id',async (req,res)=>{
