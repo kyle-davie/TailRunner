@@ -10,9 +10,11 @@ import { dogOwnerRouter } from './routes/api/dogOwner.js';
 
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies to req.body
+app.use(express.json()); // Parse JSON bodies to req.body
+app.use(express.static('frontend/dist'));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
